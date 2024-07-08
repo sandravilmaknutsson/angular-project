@@ -1,0 +1,82 @@
+.img-container {
+    width: 100%;
+    position: relative;
+
+    img {
+        height: 700px;
+        object-fit: cover;
+    }
+
+    h2 {
+        position: absolute;
+        top: 70%;
+        right: 10%;
+        z-index: 2;
+        color: white;
+        font-size: 3em;
+        text-shadow: 1px 1px 2px gray, 0 0 1em rgb(133, 133, 136), 0 0 0.2em rgb(124, 120, 120);
+    }
+}
+
+.links {
+    width: 70%;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-around;
+
+    a {
+        color: white;
+        background-color: #354F6A;
+        padding: 2%;
+        width: 180px;
+        text-align: center;
+        border-radius: 999px;
+        font-size: 1.2em;
+        text-decoration: none;
+        letter-spacing: 1.2px;
+        border: 2px solid #354F6A;
+    }
+
+    a:hover {
+        background-color: transparent;
+        color: black;
+    }
+}
+
+.img-shortcuts {
+    width: 95%;
+    display: flex;
+    gap: 5%;
+    margin: 40px auto;
+
+
+
+    .card {
+        max-width: 400px;
+        background-color: #D9D9D9;
+
+    }
+}
+
+h2 {
+    text-align: center;
+}
+
+.news {
+    width: 90%;
+    display: flex;
+    gap: 5%;
+    margin: 40px auto;
+
+    img {
+        width: 80%;
+    }
+
+    p {
+        padding-top: 30px;
+    }
+}
+
+img {
+    width: 100%;
+}

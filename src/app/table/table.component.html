@@ -1,0 +1,79 @@
+<h2>
+    Sök bland våra kurser
+</h2>
+<p>Sök bland vårt kursutbud och sätt ihop ditt egna ramschema.</p>
+
+<div class="table-container">
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. webbutveckling..." #input>
+    </mat-form-field>
+
+    <div class="container">
+        <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortChange($event)">
+
+                <ng-container matColumnDef="subjectCode">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ämneskod </th>
+                    <td mat-cell *matCellDef="let row"> {{row.subjectCode}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="level">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Level </th>
+                    <td mat-cell *matCellDef="let row"> {{row.level}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="courseCode">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Kurskod </th>
+                    <td mat-cell *matCellDef="let row"> {{row.courseCode}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="courseName">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Kursnamn </th>
+                    <td mat-cell *matCellDef="let row"> {{row.courseName}}% </td>
+                </ng-container>
+
+                <ng-container matColumnDef="points">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Poäng </th>
+                    <td mat-cell *matCellDef="let row"> {{row.points}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="syllabus">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Kursplan </th>
+                    <td mat-cell *matCellDef="let row"> {{row.syllabus}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="progression">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Kursplan </th>
+                    <td mat-cell *matCellDef="let row"> {{row.progression}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="institutionCode">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Kursplan </th>
+                    <td mat-cell *matCellDef="let row"> {{row.institutionCode}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="subject">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Kursplan </th>
+                    <td mat-cell *matCellDef="let row"> {{row.subject}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="add">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> add </th>
+                    <td mat-cell *matCellDef="let row"> <button (click)="add(row)">add</button> </td>
+                </ng-container>
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">Hittar inte kurs... {{input.value}}</td>
+                </tr>
+
+            </table>
+            <mat-paginator [pageSizeOptions]="[5]" aria-label="Select page of users"></mat-paginator>
+        </div>
+    </div>
+</div>

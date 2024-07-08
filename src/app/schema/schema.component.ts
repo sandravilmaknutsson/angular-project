@@ -8,11 +8,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { Course } from '../model/course';
 import { CoursesService } from '../services/courses.service';
 import { CommonModule, JsonPipe } from '@angular/common';
+import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-schema',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, CommonModule, JsonPipe],
+  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, CommonModule, JsonPipe, HeaderComponent, FooterComponent],
   templateUrl: './schema.component.html',
   styleUrl: './schema.component.scss'
 })
